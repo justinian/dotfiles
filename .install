@@ -1,0 +1,33 @@
+#!/bin/bash
+
+SOURCE_DIR="$HOME/.dotfiles"
+BACKUP_DIR="$HOME/.dotfiles.old"
+
+cd "$SOURCE_DIR"
+
+for dotfile in `ls`; do
+	dest="$HOME/.$dotfile"
+	sour="$SOURCE_DIR/$dotfile"
+	back="$BACKUP_DIR/$dotfile"
+	inst="yes"
+
+	if [ -f "$dest" -a ! -L "$dest" ]; then
+		mkdir -p "$BACKUP_DIR"
+		echo "Moving .$dotfile -> $back"
+		mv "$dest" "$back"
+	elif [ -L "$dest" ]; then
+		target=`readlink "$dest"`
+		if [ ! "$target" -ef "$sour" ]; then
+			echo "Removing old symlink .$dotfile -> $target"
+			rm "$dest"
+		else
+			echo "Skipping existing installed symlink .$dotfile"
+			inst="no"
+		fi
+	fi
+
+	if [ "$inst" = "yes" ]; then
+		echo "Installing $SOURCE_DIR/$dotfile -> .$dotfile"
+		ln -s "$SOURCE_DIR/$dotfile" "$HOME/.$dotfile"
+	fi
+done

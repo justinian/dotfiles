@@ -1,0 +1,11 @@
+[user]
+	name = Justin C. Miller
+	email = justin@devjustinian.com
+[core]
+	editor = vim
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+[color]
+	ui = true
