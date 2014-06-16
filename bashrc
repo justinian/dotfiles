@@ -1,8 +1,8 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-source ".bashrc.d/history"
-source ".bashrc.d/behavior"
-source ".bashrc.d/prompt"
-source ".bashrc.d/aliases"
-source ".bashrc.d/environment"
+source "$HOME/.bashrc.d/history"
+source "$HOME/.bashrc.d/behavior"
+source "$HOME/.bashrc.d/prompt"
+source "$HOME/.bashrc.d/aliases"
+source "$HOME/.bashrc.d/environment"
