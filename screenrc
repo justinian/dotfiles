@@ -1,5 +1,5 @@
 term screen-256color
 bell_msg "Bell in window %n.^G"
-shelltitle "$ |bash"
+#shelltitle "$ |bash"
 hardstatus alwayslastline '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
 defutf8 on
