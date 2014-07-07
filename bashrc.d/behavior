@@ -12,5 +12,10 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# Make sure to run .bash_logout
+trap_exit() {
+	. "$HOME/.bash_logout"
+}
+trap trap_exit EXIT
 
 # vim: ft=sh

@@ -5,3 +5,9 @@
 if [ "$SHLVL" = 1 ]; then
     [ -x /usr/bin/clear_console ] && /usr/bin/clear_console -q
 fi
+
+SEEYOU=`which seeyouspacecowboy`
+if [ -n $SEEYOU ]; then
+	$SEEYOU
+	sleep 2
+fi
