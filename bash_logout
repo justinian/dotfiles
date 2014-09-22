@@ -6,8 +6,11 @@ if [ "$SHLVL" = 1 ]; then
     [ -x /usr/bin/clear_console ] && /usr/bin/clear_console -q
 fi
 
-SEEYOU=`which seeyouspacecowboy`
-if [ -n $SEEYOU ]; then
-	$SEEYOU
-	sleep 2
+if [ -z "$DID_EXIT_MESSAGE_ALREADY" ]; then
+	SEEYOU=`which seeyouspacecowboy`
+	if [ -n $SEEYOU ]; then
+		$SEEYOU
+		sleep 1
+	fi
+	export DID_EXIT_MESSAGE_ALREADY=1
 fi
