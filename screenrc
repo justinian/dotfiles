@@ -1,5 +1,11 @@
-term screen-256color
+# Add 256 color support
+term xterm-256color
+attrcolor b ".I"
+defbce on
+
+# Prevent window resizing
+termcapinfo xterm* 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+
 bell_msg "Bell in window %n.^G"
-#shelltitle "$ |bash"
-hardstatus alwayslastline '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
+hardstatus alwayslastline '%{= kG}[ %{G}%H:%S %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][ %{y}Load: %l %{g}][%{B} %Y.%m.%d %{W}%c:%s %{g}]'
 defutf8 on
