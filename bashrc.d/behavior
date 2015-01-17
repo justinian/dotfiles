@@ -20,6 +20,8 @@ trap trap_exit EXIT
 
 if [ "$TERM" == "xterm" ]; then
 	export TERM="xterm-256color"
+fi
+if [ "$TERM" == "xterm-256color" ]; then
 	export COLORTERM=$TERM
 fi
 
