@@ -7,6 +7,9 @@ source "$HOME/.bashrc.d/prompt"
 source "$HOME/.bashrc.d/aliases"
 source "$HOME/.bashrc.d/environment"
 
-if [ -f "$HOME/.bashrc.d/hosts/$HOSTNAME" ]; then
-	source "$HOME/.bashrc.d/hosts/$HOSTNAME" 
+HOSTFILE=`hostname -s`
+if [ -f "$HOME/.bashrc.d/hosts/$HOSTFILE" ]; then
+	source "$HOME/.bashrc.d/hosts/$HOSTFILE" 
 fi
+
+# vim: ft=sh
