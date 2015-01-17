@@ -12,4 +12,8 @@ if [ -f "$HOME/.bashrc.d/hosts/$HOSTFILE" ]; then
 	source "$HOME/.bashrc.d/hosts/$HOSTFILE" 
 fi
 
+if [ -f "$HOME/.bashrc.d/hosts/$HOSTFILE.local" ]; then
+	source "$HOME/.bashrc.d/hosts/$HOSTFILE.local" 
+fi
+
 # vim: ft=sh
