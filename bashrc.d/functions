@@ -1,0 +1,23 @@
+# Flash the screen until the user presses a key
+flasher () {
+	while true; do
+		printf "\\e[?5h"
+		sleep 0.1
+		printf "\\e[?5l"
+		read -s -n1 -t1 && break
+	done
+}
+
+# Update all git repositories in the current dir
+update_all () {
+	dir=${1:-${PWD}}
+	for repo in $(find "$dir" -type d -depth 1); do
+		if [ -e "$repo/.git" ]; then
+			echo
+			echo "=== Updating $repo"
+			(cd $repo && git pull)
+		fi
+	done
+}
+
+# vim: ft=sh
