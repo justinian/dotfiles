@@ -16,4 +16,6 @@ if [ -f "$HOME/.bashrc.d/hosts/$HOSTFILE.local" ]; then
 	source "$HOME/.bashrc.d/hosts/$HOSTFILE.local" 
 fi
 
+source "$HOME/.bashrc.d/alucard"
+
 # vim: ft=sh
