@@ -19,4 +19,7 @@ alias gpg=gpg2
 alias racket='rlwrap racket'
 alias whois='whois -H'
 
+alias fucking='sudo'
+alias ffs='eval sudo $(history -p !!)'
+
 # vim: ft=sh
