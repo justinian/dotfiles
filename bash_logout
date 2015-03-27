@@ -2,15 +2,17 @@
 
 # when leaving the console clear the screen to increase privacy
 
-if [ "$SHLVL" = 1 ]; then
-    [ -x /usr/bin/clear_console ] && /usr/bin/clear_console -q
-fi
-
-if [ -z "$DID_EXIT_MESSAGE_ALREADY" ]; then
-	SEEYOU=`which seeyouspacecowboy`
-	if [ -n $SEEYOU ]; then
-		$SEEYOU
-		sleep 1
+if shopt -q login_shell; then
+	if [ "$SHLVL" = 1 ]; then
+		[ -x /usr/bin/clear_console ] && /usr/bin/clear_console -q
 	fi
-	export DID_EXIT_MESSAGE_ALREADY=1
+
+	if [ -z "$DID_EXIT_MESSAGE_ALREADY" ]; then
+		SEEYOU=`which seeyouspacecowboy`
+		if [ -n $SEEYOU ]; then
+			$SEEYOU
+			sleep 1
+		fi
+		export DID_EXIT_MESSAGE_ALREADY=1
+	fi
 fi

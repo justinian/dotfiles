@@ -1,6 +1,15 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+if shopt -q login_shell; then
+	LOGIN="true"
+fi
+
+case $- in
+	*i*) INTERACTIVE="true"
+esac
+
+
 source "$HOME/.bashrc.d/history"
 source "$HOME/.bashrc.d/behavior"
 source "$HOME/.bashrc.d/functions"
