@@ -20,4 +20,18 @@ update_all () {
 	done
 }
 
+# Clean all docker images matching given text (default "Exited")
+docker_clean () {
+	filter="${1:-Exited}"
+	exited="$(docker ps -a | grep "${filter}" | awk '{ print $1 }')"
+	if [[ "${exited}" ]]; then
+		docker rm ${exited}
+	fi
+
+	dangling="$(docker images -q --filter "dangling=true")"
+	if [[ "${dangling}" ]]; then
+		docker rmi ${dangling}
+	fi
+}
+
 # vim: ft=sh
