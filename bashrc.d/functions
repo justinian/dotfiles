@@ -34,4 +34,9 @@ docker_clean () {
 	fi
 }
 
+vilog () {
+	file="~/Dropbox/Work/Daily/`date +'%Y.%m.%d.md'`"
+	gvim $file
+}
+
 # vim: ft=sh
