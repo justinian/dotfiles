@@ -1,11 +1,12 @@
-echo $TERM | grep 256 > /dev/null
-if [[ $? -eq 0 ]]; then
-	if [[ "$COLUMNS" -ge 60 ]]; then
-		cat "$HOME/.bashrc.d/alucard.ansi"
-		echo
-		fortune "$HOME/.bashrc.d/sotnquotes"
-		echo
+if [[ -z $SKIP_ALUCARD ]]; then
+	echo $TERM | grep 256 > /dev/null
+	if [[ $? -eq 0 ]]; then
+		if [[ "$COLUMNS" -ge 60 ]]; then
+			cat "$HOME/.bashrc.d/alucard.ansi"
+			echo
+			fortune "$HOME/.bashrc.d/sotnquotes"
+			echo
+		fi
 	fi
 fi
-
 # vim: ft=sh
