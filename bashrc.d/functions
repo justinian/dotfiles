@@ -36,7 +36,11 @@ docker_clean () {
 
 vilog () {
 	file="~/Dropbox/Work/Daily/`date +'%Y.%m.%d.md'`"
-	gvim $file
+	gvim --servername daily --remote-silent $file
+}
+
+lag () {
+	ag --color --group $@ | less -R
 }
 
 # vim: ft=sh
