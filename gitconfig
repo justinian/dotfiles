@@ -11,3 +11,6 @@
 	ui = true
 [push]
 	default = matching
+
+[url "git@github.com:"]
+	insteadOf = https://github.com
