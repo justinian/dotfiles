@@ -1,0 +1,4 @@
+# vim: ft=sh
+
+HOST_COLOR='01;33m'
+SKIP_ALUCARD=1
