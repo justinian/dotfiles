@@ -6,6 +6,7 @@ defshell -/bin/bash
 
 # Prevent window resizing
 termcapinfo xterm* 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+termcapinfo xterm* ti@:te@
 
 bell_msg "Bell in window %n.^G"
 hardstatus alwayslastline '%{= kG}[ %{G}%H:%S %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][ %{y}Load: %l %{g}][%{B} %Y.%m.%d %{W}%c:%s %{g}]'
