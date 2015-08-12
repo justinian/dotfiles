@@ -34,6 +34,12 @@ docker_clean () {
 	fi
 }
 
+docker_init () {
+	machine="${1:-dev}"
+	docker-machine start $machine
+	eval "$(docker-machine env $machine)"
+}
+
 vilog () {
 	file="~/Dropbox/Work/Daily/`date +'%Y.%m.%d.md'`"
 	gvim --servername daily --remote-silent $file
