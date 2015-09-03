@@ -45,6 +45,12 @@ vilog () {
 	gvim --servername daily --remote-silent $file
 }
 
+greplog () {
+	TAG="$1"
+	LINES="${2:-2}"
+	(cd ~/Dropbox/Work; ag -A${LINES} --no-numbers --nocolor --group "#${TAG}")
+}
+
 lag () {
 	ag --color --group $@ | less -R
 }
