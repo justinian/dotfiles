@@ -48,11 +48,14 @@ vilog () {
 greplog () {
 	TAG="$1"
 	LINES="${2:-2}"
-	(cd ~/Dropbox/Work; ag -A${LINES} --no-numbers --nocolor --group "#${TAG}")
+	(cd ~/Dropbox/Work; ag -A${LINES} --no-numbers --color --group "#${TAG}")
 }
 
 lag () {
 	ag --color --group $@ | less -R
 }
 
+tnw () {
+	tmux new-window $@
+}
 # vim: ft=sh
