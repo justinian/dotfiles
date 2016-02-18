@@ -2,6 +2,7 @@
 export GOPATH=~/Projects/go
 export PATH=$PATH:$GOPATH/bin
 SKIP_ALUCARD=1
+HOST_COLOR='01;35m'
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
