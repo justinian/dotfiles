@@ -7,6 +7,7 @@
 	st = status
 	ci = commit
 	co = checkout
+	hist = log --pretty=tformat:'%C(auto)%h %>(13,trunc)%ar | %<(45,trunc)%s %C(cyan)[%an]%C(auto)%d%Creset' --graph --date=short
 [color]
 	ui = true
 [push]
