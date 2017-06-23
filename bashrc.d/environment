@@ -6,4 +6,6 @@ export GPG_TTY=`tty`
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export CLICOLOR=1
 
+export P4EDITOR='vim +0 "+/<enter\|^>>>>\|^====\|^<<<<\|^\t" +nohlsearch'
+
 # vim: ft=sh

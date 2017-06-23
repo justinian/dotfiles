@@ -1,0 +1,5 @@
+SKIP_ALUCARD=1
+
+umask 022
+export GOPATH=~/go
+export PATH=$PATH:$GOPATH/bin:~/.local/bin
