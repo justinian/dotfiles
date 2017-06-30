@@ -7,5 +7,6 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export CLICOLOR=1
 
 export P4EDITOR='vim +0 "+/<enter\|^>>>>\|^====\|^<<<<\|^\t" +nohlsearch'
+export P4CONFIG=.p4config
 
 # vim: ft=sh
