@@ -8,6 +8,7 @@ function parse_git_branch {
 }
 
 HOST_COLOR='32m'
+HOST_HICOLOR=86
 
 if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
 	# We have color support; assume it's compliant with Ecma-48
@@ -15,15 +16,25 @@ if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
 	# a case would tend to support setf rather than setaf.)
 	color_prompt=yes
 else
-	color_prompt=
+	color_prompt=no
 fi
 
 if [ "$color_prompt" = yes ]; then
-	PS1="\[\e[0;33m\][\!] \D{%a %R}\[\e[0m\]\[\e[0;32m\]$(parse_git_branch) \[\e[01;34m\]\w\[\e[00m\]\n\[\e[${HOST_COLOR}\]\u@\h\[\e[00m\] \$ "
-	#PS1="\[\e[0;33m\][\!]\[\e[0m\]\[\e[0;32m\]\$(parse_git_branch) \[\e[01;34m\]\w\[\e[00m\]\n\[\e[\${HOST_COLOR}\]\u@\h\[\e[00m\] \$ "
-	#PS1="\[\$(set_host_color)\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[0;32m\]\$(parse_git_branch) \[\033[0m\]\$ "
+    if [[ $(tput colors) -ge 256 ]]; then
+        C_NUM="\[$(tput setaf 230)\]"
+        C_GIT="\[$(tput setaf 156)\]"
+        C_DIR="\[$(tput setaf 75)\]"
+        C_HOST="\[\$(tput setaf ${HOST_HICOLOR})\]"
+    else
+        C_NUM="\[\e[0;33m\]"
+        C_GIT="\[\e[0;32m\]"
+        C_DIR="\[\e[01;34m\]"
+        C_HOST="\[\e[${HOST_COLOR}\]"
+    fi
+    C_NO="\[\e[00m\]"
+	PS1="${C_NUM}[\!] \D{%a %R}${C_NO}${C_GIT}\$(parse_git_branch) ${C_DIR}\w${C_NO}\n${C_HOST}\u@\h${C_NO} \\$ "
 else
-	PS1="\u@\h:\w\$(parse_git_branch) \$ "
+	PS1="[\!] \D{%a %R}$(parse_git_branch) \w\n\u@\h \\$ "
 fi
 unset color_prompt
 
