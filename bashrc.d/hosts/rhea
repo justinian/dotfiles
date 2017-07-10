@@ -2,4 +2,5 @@
 SKIP_ALUCARD=1
 
 export GOPATH=~/go
-export PATH=$PATH:$GOPATH/bin
+export PATH="$HOME/.cargo/bin:$GOPATH/bin:$PATH:$GOPATH/bin"
+
