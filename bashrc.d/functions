@@ -59,6 +59,15 @@ tnw () {
 	tmux new-window $@
 }
 
+tvim () {
+    if [[ -z $TMUX ]]; then
+        vim $*
+    else
+        tmux split-window -h -p 40 vim $*
+        tmux swap-pane -U
+    fi
+}
+
 man () {
     LESS_TERMCAP_mb=$'\e'"[1;31m" \
     LESS_TERMCAP_md=$'\e'"[1;31m" \
