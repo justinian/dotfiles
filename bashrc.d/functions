@@ -79,4 +79,8 @@ man () {
     command man "$@"
 }
 
+rustup-init () {
+    curl https://sh.rustup.rs -sSf | sh -s -- --no-modify-path
+}
+
 # vim: ft=sh

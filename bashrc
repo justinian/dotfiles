@@ -28,8 +28,4 @@ fi
 
 source "$HOME/.bashrc.d/alucard"
 
-if [ -f "$HOME/.cargo/env" ]; then
-	source "$HOME/.cargo/env" 
-fi
-
 # vim: ft=sh

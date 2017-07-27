@@ -9,4 +9,8 @@ export CLICOLOR=1
 export P4EDITOR='vim +0 "+/<enter\|^>>>>\|^====\|^<<<<\|^\t" +nohlsearch'
 export P4CONFIG=.p4config
 
+if [ -f "$HOME/.cargo/env" ]; then
+	source "$HOME/.cargo/env"
+fi
+
 # vim: ft=sh
