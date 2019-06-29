@@ -1,7 +1,19 @@
-export PATH=$PATH:~/bin
+export PATH=$PATH:~/bin:~/go/bin
 export EDITOR=vim
 export VISTUAL=vim
 export GPG_TTY=`tty`
+
+if [[ -d ~/bin ]]; then
+	PATH="~/bin:$PATH"
+fi
+
+if [[ -d ~/go/bin ]]; then
+	PATH="~/go/bin:$PATH"
+fi
+
+if [[ -d ~/.local/bin ]]; then
+	PATH="~/.local/bin:$PATH"
+fi
 
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export CLICOLOR=1
