@@ -3,6 +3,7 @@
 	email = justin@devjustinian.com
 [core]
 	editor = vim
+	pager = less -x1,5
 [alias]
 	s = status -s
 	st = status
