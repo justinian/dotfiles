@@ -15,6 +15,10 @@ if [[ -d ~/.local/bin ]]; then
 	PATH="~/.local/bin:$PATH"
 fi
 
+if [[ -f ~/.cargo/env ]]; then
+	source ~/.cargo/env
+fi
+
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export CLICOLOR=1
 
