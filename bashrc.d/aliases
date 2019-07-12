@@ -22,4 +22,8 @@ alias whois='whois -H'
 alias fucking='sudo'
 alias ffs='eval sudo $(history -p !!)'
 
+# kubectl aliases
+alias k='kubectl'
+alias kuse='kubectl config use-context'
+
 # vim: ft=sh
