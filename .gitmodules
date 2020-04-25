@@ -1,0 +1,3 @@
+[submodule ".local/lib/yadm"]
+	path = .local/lib/yadm
+	url = https://github.com/TheLocehiliosan/yadm.git
