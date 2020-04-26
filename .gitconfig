@@ -1,1 +1,17 @@
-/home/justin/.dotfiles/gitconfig
+[user]
+	name = Justin C. Miller
+	email = justin@devjustinian.com
+[core]
+	editor = vim
+[alias]
+	s = status -s
+	st = status
+	ci = commit
+	co = checkout
+	hist = log --pretty=tformat:'%C(auto)%h %>(13,trunc)%ar | %<(45,trunc)%s %C(cyan)[%an]%C(auto)%d%Creset' --graph --date=short
+[color]
+	ui = true
+[push]
+	default = matching
+[url "git@github.com:"]
+	    insteadOf = https://github.com/
