@@ -1,0 +1,12 @@
+map All Q <grv-exit>
+map All A <grv-show-available-actions>
+map GitStatusView A <grv-show-available-actions>
+map GitStatusView <C-a> <grv-action-amend-commit>
+
+map MessageBoxView q <grv-remove-view>
+map RefView q <grv-exit>
+map CommitView q <grv-exit>
+map GitStatusView q <grv-exit>
+map RemoteView q <grv-exit>
+map DiffView q <grv-exit>
+map RefView q <grv-exit>
