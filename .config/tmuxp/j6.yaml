@@ -1,0 +1,25 @@
+session_name: j6
+start_directory: ~/src/jsix/main
+shell_command_before: exec fish --private
+windows:
+  - window_name: fish
+    panes:
+      - pane
+  - window_name: vim
+    panes:
+      - shell_command:
+        - vim src/kernel/main.cpp
+  - window_name: git
+    focus: true
+    panes:
+      - shell_command:
+        - sleep 1
+        - grv
+  - window_name: notes
+    layout: main-vertical
+    panes:
+      - start_directory: ~/stream
+      - shell_command:
+        - vim
+        - :e ~/Sync/Notes/osdev/jsix_design.md
+        start_directory: "~"
