@@ -2,7 +2,7 @@
 	name = Justin C. Miller
 	email = justin@devjustinian.com
 [core]
-	editor = vim
+	editor = nvim
 [alias]
 	s = status -s
 	st = status
