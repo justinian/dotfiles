@@ -4,14 +4,10 @@ function fish_greeting --description 'Initial greeting upon login'
 	end
 
 	if test (tput colors) -ge 256
-		cat ~/.config/fish/alucard.ansi
-		echo
-	end
-
-	set -l quotes ~/.config/fish/sotnquotes
-	if not fortune $quotes
-		strfile $quotes
-		echo
-		fortune $quotes
+        set -l logo ~/.config/fish/logos/(hostname|tr '[A-Z]' '[a-z]').ansi
+        if test -f $logo
+            echo
+            cat $logo
+        end
 	end
 end
