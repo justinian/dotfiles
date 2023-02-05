@@ -1,4 +1,8 @@
 function fish_greeting --description 'Initial greeting upon login'
+    if ! status is-login
+        return
+    end
+
 	if set -qU justin_no_greeting
 		return
 	end
